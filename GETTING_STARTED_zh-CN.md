@@ -24,6 +24,12 @@ python scripts/orchestrate.py advance TASK-001
 
 状态推进日志会自动写入：`logs/orchestration_events.jsonl`
 
+周报统计命令：
+
+```bash
+python scripts/report.py weekly
+```
+
 ## 3. 记录决策
 
 如涉及架构或重大取舍，复制 `templates/adr.md` 到 `decisions/ADR-xxx.md`。

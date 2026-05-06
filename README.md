@@ -67,6 +67,13 @@ State changes (`advance` and `set`) are appended to:
 
 - `logs/orchestration_events.jsonl`
 
+Generate weekly report:
+
+```bash
+python scripts/report.py weekly
+python scripts/report.py weekly --week 2026-W19
+```
+
 ## GitHub
 
 - This folder can be an independent repository.
