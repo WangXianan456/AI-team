@@ -101,6 +101,8 @@ python scripts/cost_report.py weekly
 - Policy: `policies/self_improvement_loop.md`
 - Workflow: `workflows/self_evolution_workflow.md`
 - Keep human approval as final gate for any self-update.
+- Expert bar: `policies/agent_expert_standard.md`
+- Expert growth loop: `workflows/expert_growth_loop.md`
 
 ## GitHub
 
