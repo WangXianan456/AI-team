@@ -2,9 +2,9 @@
 
 ## Meta
 
-- Status: `todo`
+- Status: `done`
 - Priority: `P1`
-- Owner: `pm`
+- Owner: `orchestrator`
 - Due: `2026-05-08`
 - Epic: `EPIC-001`
 - Depends On: `TASK-001`
