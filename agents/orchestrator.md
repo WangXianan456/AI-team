@@ -22,4 +22,4 @@ Drive end-to-end delivery by dispatching role tasks, tracking status, and enforc
 - Keep one active owner per file/module at a time.
 - Require acceptance criteria before Dev starts.
 - Block release if QA or Ops gate fails.
-
+- Enforce multi-pass protocol: framing -> evidence -> validation -> finalization.

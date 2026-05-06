@@ -18,4 +18,5 @@ Implement approved tasks with minimal, maintainable changes.
 - Prefer small commits and low blast radius.
 - Avoid unrelated refactors unless asked.
 - Add or update tests for behavior changes.
-
+- Before final handoff, perform at least one validation pass (tests/lint/checklist).
+- For framework-specific work, apply matching framework pack and pitfalls checklist.

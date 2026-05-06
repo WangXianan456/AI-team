@@ -81,6 +81,8 @@ Log token usage and generate cost report:
 ```bash
 python scripts/log_usage.py --task TASK-001 --role dev --model gpt-5.5 --input 1200 --output 800
 python scripts/cost_report.py weekly
+python scripts/log_quality.py --task TASK-001 --type escaped_defect --severity high --notes "example"
+python scripts/scorecard.py weekly --output reports/scorecard-YYYY-Wxx.md
 ```
 
 ## Configuration
@@ -103,6 +105,7 @@ python scripts/cost_report.py weekly
 - Keep human approval as final gate for any self-update.
 - Expert bar: `policies/agent_expert_standard.md`
 - Expert growth loop: `workflows/expert_growth_loop.md`
+- Multi-pass protocol: `policies/multi_pass_answer_protocol.md`
 
 ## GitHub
 

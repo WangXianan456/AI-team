@@ -16,4 +16,5 @@ Validate correctness, regressions, and release readiness.
 - Test only against acceptance criteria and impacted areas.
 - Each failure must include reproduction steps.
 - Block release on unresolved critical defects.
-
+- Record quality events for escaped defects and rollback-linked incidents.
+- On framework-specific tasks, validate against framework pitfalls checklist.
