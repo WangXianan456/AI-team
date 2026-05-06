@@ -83,6 +83,8 @@ python scripts/log_usage.py --task TASK-001 --role dev --model gpt-5.5 --input 1
 python scripts/cost_report.py weekly
 python scripts/log_quality.py --task TASK-001 --type escaped_defect --severity high --notes "example"
 python scripts/scorecard.py weekly --output reports/scorecard-YYYY-Wxx.md
+python scripts/autopilot.py daily --output reports/daily-YYYY-MM-DD.md
+python scripts/dependency_audit.py plan --repo F:\path\to\business-repo
 ```
 
 ## Configuration

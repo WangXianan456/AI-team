@@ -10,6 +10,7 @@ Skills are reusable behavior packs attached to roles.
 - `qa`: test-design, regression-focus, defect-triage
 - `ops`: release-safety, rollback-drill, observability-basics
 - `dev/qa`: framework depth packs (backend/frontend) + pitfalls checklist
+- `cross-role`: debug-root-cause, api-contract-review, sql-safety, performance-tuning, incident-response
 
 ## Contract
 
@@ -20,3 +21,11 @@ Each skill should define:
 3. Output schema
 4. Guardrails
 5. Failure fallback
+
+## Installed Skill Packs
+
+- `debug_root_cause_pack.md`
+- `api_contract_review_pack.md`
+- `sql_safety_pack.md`
+- `performance_tuning_pack.md`
+- `incident_response_pack.md`

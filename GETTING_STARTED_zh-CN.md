@@ -35,6 +35,8 @@ python scripts/report.py weekly
 ```bash
 python scripts/log_usage.py --task TASK-001 --role dev --model gpt-5.5 --input 1200 --output 800
 python scripts/cost_report.py weekly
+python scripts/autopilot.py daily --output reports/daily-YYYY-MM-DD.md
+python scripts/dependency_audit.py plan --repo F:\path\to\business-repo
 ```
 
 ## 3. 记录决策
