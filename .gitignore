@@ -1,0 +1,16 @@
+# secrets
+.env
+.env.*
+secrets/
+
+# local runtime outputs
+logs/*.jsonl
+logs/*.log
+tmp/
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
