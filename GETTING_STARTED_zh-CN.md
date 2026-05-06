@@ -30,6 +30,13 @@ python scripts/orchestrate.py advance TASK-001
 python scripts/report.py weekly
 ```
 
+记录 token 和费用统计：
+
+```bash
+python scripts/log_usage.py --task TASK-001 --role dev --model gpt-5.5 --input 1200 --output 800
+python scripts/cost_report.py weekly
+```
+
 ## 3. 记录决策
 
 如涉及架构或重大取舍，复制 `templates/adr.md` 到 `decisions/ADR-xxx.md`。
@@ -42,3 +49,5 @@ python scripts/report.py weekly
 - 质量问题
 - AI成本
 - 下周优化项
+
+大项目请先建 EPIC（`templates/epic_card.md`），再拆 TASK 并写 `Depends On`。

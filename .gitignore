@@ -7,10 +7,10 @@ secrets/
 logs/*.jsonl
 logs/*.log
 tmp/
+reports/*.md
 
 # OS/editor
 .DS_Store
 Thumbs.db
 .idea/
 .vscode/
-

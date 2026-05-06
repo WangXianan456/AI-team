@@ -6,6 +6,11 @@
 - Priority: `P0`
 - Owner: `pm`
 - Due: `2026-05-07`
+- Epic: `EPIC-001`
+- Depends On: `none`
+- Target Repo Path: `F:\AABRepository\AI-team\agent-system`
+- Branch: `feature/bootstrap-agent-system`
+- Estimate: `1d`
 
 ## Goal
 

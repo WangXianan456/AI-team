@@ -6,6 +6,11 @@
 - Priority: `P1`
 - Owner: `pm/dev/qa/ops`
 - Due: `YYYY-MM-DD`
+- Epic: `EPIC-XXX`
+- Depends On: `TASK-AAA, TASK-BBB` (or `none`)
+- Target Repo Path: `F:\path\to\business-repo`
+- Branch: `feature/xxx`
+- Estimate: `0.5d`
 
 ## Goal
 
@@ -39,4 +44,3 @@ Describe the expected business or user outcome.
 - Dev -> QA:
 - QA -> Ops:
 - Ops -> Orchestrator:
-

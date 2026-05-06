@@ -1,0 +1,40 @@
+defaults:
+  planner: "gpt-5.4"
+  builder: "gpt-5.5"
+  reviewer: "gpt-5.4"
+  qa: "gpt-5.4-mini"
+  ops: "gpt-5.4-mini"
+
+reasoning_effort:
+  pm: "high"
+  dev: "medium"
+  qa: "high"
+  ops: "medium"
+  orchestrator: "high"
+
+role_routing:
+  orchestrator:
+    primary: "gpt-5.4"
+    fallback: "gpt-5.4-mini"
+  pm:
+    primary: "gpt-5.4"
+    fallback: "gpt-5.4-mini"
+  dev:
+    primary: "gpt-5.5"
+    fallback: "gpt-5.4"
+  qa:
+    primary: "gpt-5.4-mini"
+    fallback: "gpt-5.4"
+  ops:
+    primary: "gpt-5.4-mini"
+    fallback: "gpt-5.4"
+
+upgrade_policy:
+  trigger_conditions:
+    - "P0 production incident"
+    - "architecture decision"
+    - "critical bug root cause unresolved after 2 attempts"
+  downgrade_conditions:
+    - "daily budget reached 80%"
+    - "non-critical drafting tasks"
+

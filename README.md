@@ -13,6 +13,7 @@ Single-repo operating system for a solo developer with multiple AI roles.
 ```text
 agent-system/
   agents/                 # role definitions
+  config/                 # model/pricing routing config
   skills/                 # reusable role skill packs
   workflows/              # orchestration and state machine docs
   policies/               # permission and quality policies
@@ -61,6 +62,7 @@ python scripts/orchestrate.py list
 python scripts/orchestrate.py next TASK-001
 python scripts/orchestrate.py advance TASK-001
 python scripts/orchestrate.py set TASK-001 qa
+python scripts/orchestrate.py blockers TASK-001
 ```
 
 State changes (`advance` and `set`) are appended to:
@@ -73,6 +75,31 @@ Generate weekly report:
 python scripts/report.py weekly
 python scripts/report.py weekly --week 2026-W19
 ```
+
+Log token usage and generate cost report:
+
+```bash
+python scripts/log_usage.py --task TASK-001 --role dev --model gpt-5.5 --input 1200 --output 800
+python scripts/cost_report.py weekly
+```
+
+## Configuration
+
+- Model routing: `config/models.yaml`
+- Pricing and budget: `config/pricing.yaml` and `config/pricing.json`
+
+## Large Project Pattern
+
+1. Create one `EPIC` card from `templates/epic_card.md`.
+2. Split into task cards from `templates/task_card.md`.
+3. Fill `Depends On` for each task.
+4. Run `orchestrate.py blockers TASK-xxx` before moving to `doing`.
+
+## Self-Evolution
+
+- Policy: `policies/self_improvement_loop.md`
+- Workflow: `workflows/self_evolution_workflow.md`
+- Keep human approval as final gate for any self-update.
 
 ## GitHub
 
