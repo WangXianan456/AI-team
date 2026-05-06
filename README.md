@@ -52,9 +52,19 @@ See `workflows/delivery_flow.md`.
 4. Record decision in `decisions/ADR-xxx.md` if architecture changed.
 5. Commit results and logs.
 
+## CLI Orchestrator
+
+Use the local helper script to manage task state:
+
+```bash
+python scripts/orchestrate.py list
+python scripts/orchestrate.py next TASK-001
+python scripts/orchestrate.py advance TASK-001
+python scripts/orchestrate.py set TASK-001 qa
+```
+
 ## GitHub
 
 - This folder can be an independent repository.
 - Do not commit secrets. Keep keys in `.env` and local secure stores.
 - `logs/` and `memory/` may contain sensitive content; sanitize before push.
-

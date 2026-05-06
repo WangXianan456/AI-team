@@ -14,6 +14,14 @@
 
 流程参考：`workflows/delivery_flow.md`
 
+也可以用命令行推进状态：
+
+```bash
+python scripts/orchestrate.py list
+python scripts/orchestrate.py next TASK-001
+python scripts/orchestrate.py advance TASK-001
+```
+
 ## 3. 记录决策
 
 如涉及架构或重大取舍，复制 `templates/adr.md` 到 `decisions/ADR-xxx.md`。
@@ -26,4 +34,3 @@
 - 质量问题
 - AI成本
 - 下周优化项
-
