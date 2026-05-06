@@ -1,9 +1,9 @@
 defaults:
-  planner: "gpt-5.4"
-  builder: "gpt-5.5"
-  reviewer: "gpt-5.4"
-  qa: "gpt-5.4-mini"
-  ops: "gpt-5.4-mini"
+  planner: "gpt-5.3-codex"
+  builder: "gpt-5.3-codex"
+  reviewer: "gpt-5.3-codex"
+  qa: "gpt-5.3-codex"
+  ops: "gpt-5.3-codex"
 
 reasoning_effort:
   pm: "high"
@@ -14,20 +14,20 @@ reasoning_effort:
 
 role_routing:
   orchestrator:
-    primary: "gpt-5.4"
+    primary: "gpt-5.3-codex"
     fallback: "gpt-5.4-mini"
   pm:
-    primary: "gpt-5.4"
+    primary: "gpt-5.3-codex"
     fallback: "gpt-5.4-mini"
   dev:
-    primary: "gpt-5.5"
+    primary: "gpt-5.3-codex"
     fallback: "gpt-5.4"
   qa:
-    primary: "gpt-5.4-mini"
-    fallback: "gpt-5.4"
+    primary: "gpt-5.3-codex"
+    fallback: "gpt-5.4-mini"
   ops:
-    primary: "gpt-5.4-mini"
-    fallback: "gpt-5.4"
+    primary: "gpt-5.3-codex"
+    fallback: "gpt-5.4-mini"
 
 upgrade_policy:
   trigger_conditions:
@@ -37,4 +37,3 @@ upgrade_policy:
   downgrade_conditions:
     - "daily budget reached 80%"
     - "non-critical drafting tasks"
-

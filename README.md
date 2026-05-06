@@ -87,6 +87,7 @@ python scripts/cost_report.py weekly
 
 - Model routing: `config/models.yaml`
 - Pricing and budget: `config/pricing.yaml` and `config/pricing.json`
+- Codex Azure env template: `config/codex.env.example` (copy to local `.env`)
 
 ## Large Project Pattern
 

@@ -3,6 +3,9 @@ per_million_tokens:
   gpt-5.5:
     input: 10.0
     output: 30.0
+  gpt-5.3-codex:
+    input: 4.0
+    output: 12.0
   gpt-5.4:
     input: 4.0
     output: 12.0
