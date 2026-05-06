@@ -63,6 +63,10 @@ python scripts/orchestrate.py advance TASK-001
 python scripts/orchestrate.py set TASK-001 qa
 ```
 
+State changes (`advance` and `set`) are appended to:
+
+- `logs/orchestration_events.jsonl`
+
 ## GitHub
 
 - This folder can be an independent repository.

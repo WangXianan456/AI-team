@@ -12,13 +12,17 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import json
 import re
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Dict, List, Tuple
 
 
 ROOT = Path(__file__).resolve().parents[1]
 TASK_DIR = ROOT / "tasks"
+LOG_DIR = ROOT / "logs"
+EVENT_LOG = LOG_DIR / "orchestration_events.jsonl"
 
 STATE_FLOW: List[str] = ["todo", "doing", "qa", "release", "done"]
 OWNER_BY_STATE: Dict[str, str] = {
@@ -83,6 +87,17 @@ def write_task_meta(path: Path, new_status: str, new_owner: str) -> None:
     path.write_text("\n".join(out) + "\n", encoding="utf-8")
 
 
+def now_utc_iso() -> str:
+    return datetime.now(timezone.utc).isoformat()
+
+
+def append_event(event: Dict[str, str]) -> None:
+    LOG_DIR.mkdir(parents=True, exist_ok=True)
+    payload = {"timestamp_utc": now_utc_iso(), **event}
+    with EVENT_LOG.open("a", encoding="utf-8") as f:
+        f.write(json.dumps(payload, ensure_ascii=False) + "\n")
+
+
 def list_tasks() -> None:
     files = sorted(TASK_DIR.glob("TASK-*.md"))
     if not files:
@@ -121,16 +136,35 @@ def advance(task_id: str) -> None:
     new_status = STATE_FLOW[idx + 1]
     new_owner = OWNER_BY_STATE[new_status]
     write_task_meta(path, new_status, new_owner)
+    append_event(
+        {
+            "action": "advance",
+            "task_id": path.stem,
+            "from_status": status,
+            "to_status": new_status,
+            "owner": new_owner,
+        }
+    )
     print(f"{path.stem}: advanced to status={new_status}, owner={new_owner}")
 
 
 def set_status(task_id: str, new_status: str) -> None:
     path = task_path(task_id)
+    old_status, _old_owner = read_task_meta(path)
     new_status = new_status.lower()
     if new_status not in STATE_FLOW:
         raise ValueError(f"Invalid status: {new_status}")
     new_owner = OWNER_BY_STATE[new_status]
     write_task_meta(path, new_status, new_owner)
+    append_event(
+        {
+            "action": "set",
+            "task_id": path.stem,
+            "from_status": old_status,
+            "to_status": new_status,
+            "owner": new_owner,
+        }
+    )
     print(f"{path.stem}: set status={new_status}, owner={new_owner}")
 
 
@@ -168,4 +202,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-
