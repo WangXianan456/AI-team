@@ -9,6 +9,10 @@ logs/*.log
 tmp/
 reports/*.md
 
+# downloaded external upstream repos (local use only)
+external/*
+!external/README.md
+
 # OS/editor
 .DS_Store
 Thumbs.db

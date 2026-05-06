@@ -29,3 +29,11 @@ Each skill should define:
 - `sql_safety_pack.md`
 - `performance_tuning_pack.md`
 - `incident_response_pack.md`
+
+## Imported From Anthropic Skills
+
+- `anthropic_imports/claude-api/SKILL.md`
+- `anthropic_imports/mcp-builder/SKILL.md`
+- `anthropic_imports/webapp-testing/SKILL.md`
+- `anthropic_imports/skill-creator/SKILL.md`
+- `anthropic_imports/frontend-design/SKILL.md`

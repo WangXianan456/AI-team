@@ -92,6 +92,7 @@ python scripts/dependency_audit.py plan --repo F:\path\to\business-repo
 - Model routing: `config/models.yaml`
 - Pricing and budget: `config/pricing.yaml` and `config/pricing.json`
 - Codex Azure env template: `config/codex.env.example` (copy to local `.env`)
+- External mirrors and import status: `external/README.md`
 
 ## Large Project Pattern
 
